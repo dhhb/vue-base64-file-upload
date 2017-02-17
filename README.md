@@ -2,6 +2,8 @@
 
 > Upload files as base64 data-uris (URL representing the file's data as a base64 encoded string).
 
+<img src="example.gif" width="600" />
+
 ## Install
 
 ```bash

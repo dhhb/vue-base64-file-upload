@@ -94,15 +94,21 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					placeholder: {
 						type: String,
 						default: 'Click here to upload image'
+					},
+					defaultPreview: {
+						type: String,
+						default: ''
 					}
 				},
 
 				data: function data() {
 					return {
 						file: null,
+						preview: this.defaultPreview,
 						visiblePreview: false
 					};
 				},
+				mounted: function mounted() {},
 
 				computed: {
 					wrapperStyles: function wrapperStyles() {
@@ -159,14 +165,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 						var reader = new FileReader();
 
 						reader.onload = function (e) {
-							var preview = _this.$refs.preview;
 							var dataURI = e.target.result;
 
 							if (dataURI) {
 								_this.$emit('load', dataURI);
 
-								_this.visiblePreview = true;
-								preview.src = dataURI;
+								_this.preview = dataURI;
 							}
 						};
 
@@ -175,7 +179,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					}
 				},
 
-				template: '\n    <div class="vue-base64-file-upload">\n      <img\n        v-show="visiblePreview && !disablePreview"\n        ref="preview"\n        :class="imageClass" />\n      <div class="vue-base64-file-upload-wrapper" :style="wrapperStyles">\n        <input\n          ref="input"\n          type="file"\n          @change="onChange"\n          :style="fileInputStyles"\n          :accept=accept />\n        <input\n          type="text"\n          :class="inputClass"\n          :style="textInputStyles"\n          :value="fileName || file && file.name"\n          :placeholder="placeholder"\n          disabled />\n      </div>\n    </div>\n  '
+				template: '\n    <div class="vue-base64-file-upload">\n      <img\n        v-show="preview && !disablePreview"\n        :src="preview"\n        :class="imageClass" />\n      <div class="vue-base64-file-upload-wrapper" :style="wrapperStyles">\n        <input\n          type="file"\n          @change="onChange"\n          :style="fileInputStyles"\n          :accept=accept />\n        <input\n          type="text"\n          :class="inputClass"\n          :style="textInputStyles"\n          :value="fileName || file && file.name"\n          :placeholder="placeholder"\n          disabled />\n      </div>\n    </div>\n  '
 			};
 
 			/***/
@@ -223,7 +227,7 @@ var app = new _vue2.default({
     }
   },
 
-  template: '\n    <div class="container">\n      <h2>Vue Base64 File Upload</h2>\n      <div>\n        <vue-base64-file-upload\n          class="v1"\n          accept="image/png,image/jpeg"\n          image-class="v1-image"\n          input-class="v1-image"\n          :max-size="customImageMaxSize"\n          @size-exceeded="onSizeExceeded"\n          @file="onFile"\n          @load="onLoad" />\n      </div>\n      <div>\n        <vue-base64-file-upload\n          class="v2"\n          @size-exceeded="onSizeExceeded"\n          @file="onFile"\n          @load="onLoad" />\n      </div>\n    </div>\n  '
+  template: '\n    <div class="container">\n      <h2>Vue Base64 File Upload</h2>\n      <div>\n        <vue-base64-file-upload\n          class="v1"\n          accept="image/png,image/jpeg"\n          image-class="v1-image"\n          input-class="v1-image"\n          :max-size="customImageMaxSize"\n          @size-exceeded="onSizeExceeded"\n          @file="onFile"\n          @load="onLoad" />\n      </div>\n      <div>\n        <vue-base64-file-upload\n          class="v2"\n          default-preview="https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100"\n          @size-exceeded="onSizeExceeded"\n          @file="onFile"\n          @load="onLoad" />\n      </div>\n    </div>\n  '
 });
 
 app.$mount('#app');

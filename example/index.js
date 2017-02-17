@@ -44,6 +44,7 @@ const app = new Vue({
       <div>
         <vue-base64-file-upload
           class="v2"
+          default-preview="https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100"
           @size-exceeded="onSizeExceeded"
           @file="onFile"
           @load="onLoad" />

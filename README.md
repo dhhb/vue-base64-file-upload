@@ -69,6 +69,7 @@ app.$mount('#app');
 - `accept` - mimetypes allowed for upload, _defaults to `'image/png,image/gif,image/jpeg'`_
 - `max-size` - number of megabytes allowed for upload, _defaults to `10`_
 - `disable-preview` - not show preview image, _defaults to `false`_
+- `default-preview` - pass url or data-uri to be displayed as default image
 - `file-name` - pass custom filename to be displayed in text `input` tag
 - `placeholder` - pass placeholder text for text `input` tag
 

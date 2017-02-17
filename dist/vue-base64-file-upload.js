@@ -94,15 +94,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	    placeholder: {
 	      type: String,
 	      default: 'Click here to upload image'
+	    },
+	    defaultPreview: {
+	      type: String,
+	      default: ''
 	    }
 	  },
 
 	  data: function data() {
 	    return {
 	      file: null,
+	      preview: this.defaultPreview,
 	      visiblePreview: false
 	    };
 	  },
+	  mounted: function mounted() {},
 
 
 	  computed: {
@@ -160,14 +166,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var reader = new FileReader();
 
 	      reader.onload = function (e) {
-	        var preview = _this.$refs.preview;
 	        var dataURI = e.target.result;
 
 	        if (dataURI) {
 	          _this.$emit('load', dataURI);
 
-	          _this.visiblePreview = true;
-	          preview.src = dataURI;
+	          _this.preview = dataURI;
 	        }
 	      };
 
@@ -176,7 +180,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 
-	  template: '\n    <div class="vue-base64-file-upload">\n      <img\n        v-show="visiblePreview && !disablePreview"\n        ref="preview"\n        :class="imageClass" />\n      <div class="vue-base64-file-upload-wrapper" :style="wrapperStyles">\n        <input\n          ref="input"\n          type="file"\n          @change="onChange"\n          :style="fileInputStyles"\n          :accept=accept />\n        <input\n          type="text"\n          :class="inputClass"\n          :style="textInputStyles"\n          :value="fileName || file && file.name"\n          :placeholder="placeholder"\n          disabled />\n      </div>\n    </div>\n  '
+	  template: '\n    <div class="vue-base64-file-upload">\n      <img\n        v-show="preview && !disablePreview"\n        :src="preview"\n        :class="imageClass" />\n      <div class="vue-base64-file-upload-wrapper" :style="wrapperStyles">\n        <input\n          type="file"\n          @change="onChange"\n          :style="fileInputStyles"\n          :accept=accept />\n        <input\n          type="text"\n          :class="inputClass"\n          :style="textInputStyles"\n          :value="fileName || file && file.name"\n          :placeholder="placeholder"\n          disabled />\n      </div>\n    </div>\n  '
 	};
 
 /***/ }

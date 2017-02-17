@@ -33,14 +33,23 @@ export default {
     placeholder: {
       type: String,
       default: 'Click here to upload image'
+    },
+    defaultPreview: {
+      type: String,
+      default: ''
     }
   },
 
   data() {
     return {
       file: null,
+      preview: this.defaultPreview,
       visiblePreview: false
     };
+  },
+
+  mounted() {
+
   },
 
   computed: {
@@ -70,7 +79,7 @@ export default {
       return {
         'width': '100%',
         'cursor': 'pointer'
-      }
+      };
     }
   },
 
@@ -98,14 +107,12 @@ export default {
       const reader = new FileReader();
 
       reader.onload = e => {
-        const preview = this.$refs.preview;
-        const dataURI = e.target.result
+        const dataURI = e.target.result;
 
         if (dataURI) {
           this.$emit('load', dataURI);
 
-          this.visiblePreview = true;
-          preview.src = dataURI;
+          this.preview = dataURI;
         }
       };
 
@@ -117,12 +124,11 @@ export default {
   template: `
     <div class="vue-base64-file-upload">
       <img
-        v-show="visiblePreview && !disablePreview"
-        ref="preview"
+        v-show="preview && !disablePreview"
+        :src="preview"
         :class="imageClass" />
       <div class="vue-base64-file-upload-wrapper" :style="wrapperStyles">
         <input
-          ref="input"
           type="file"
           @change="onChange"
           :style="fileInputStyles"

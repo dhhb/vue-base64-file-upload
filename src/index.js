@@ -1,10 +1,10 @@
-import Vue from 'vue';
-
 if (!window.FileReader) {
   console.error('Your browser does not support FileReader API!');
 }
 
-export default Vue.component('vue-base64-file-upload', {
+export default {
+  name: 'vue-base64-file-upload',
+
   props: {
     imageClass: {
       type: String,
@@ -137,4 +137,4 @@ export default Vue.component('vue-base64-file-upload', {
       </div>
     </div>
   `
-});
+};

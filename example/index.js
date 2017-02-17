@@ -1,5 +1,5 @@
-import Vue from 'vue';
-import VueBase64FileUpload from '../';
+import Vue from 'vue/dist/vue';
+import VueBase64FileUpload from '../dist/vue-base64-file-upload';
 
 const app = new Vue({
   components: {

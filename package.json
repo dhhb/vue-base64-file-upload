@@ -1,6 +1,6 @@
 {
   "name": "vue-base64-file-upload",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Upload files as base64 data-uris",
   "main": "./index.js",
   "directories": {
@@ -29,9 +29,6 @@
     "data-uri",
     "blob"
   ],
-  "browser": {
-    "vue": "vue/dist/vue.common"
-  },
   "author": "Dmitri Voronianski <dmitri.voronianski@gmail.com>",
   "license": "MIT",
   "bugs": {

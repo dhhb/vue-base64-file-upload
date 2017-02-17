@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("vue"));
+		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
-		define("VueBase64FileUpload", ["vue"], factory);
+		define("VueBase64FileUpload", [], factory);
 	else if(typeof exports === 'object')
-		exports["VueBase64FileUpload"] = factory(require("vue"));
+		exports["VueBase64FileUpload"] = factory();
 	else
-		root["VueBase64FileUpload"] = factory(root["Vue"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_1__) {
+		root["VueBase64FileUpload"] = factory();
+})(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -52,25 +52,20 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-
-	var _vue = __webpack_require__(1);
-
-	var _vue2 = _interopRequireDefault(_vue);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 	if (!window.FileReader) {
 	  console.error('Your browser does not support FileReader API!');
 	}
 
-	exports.default = _vue2.default.component('vue-base64-file-upload', {
+	exports.default = {
+	  name: 'vue-base64-file-upload',
+
 	  props: {
 	    imageClass: {
 	      type: String,
@@ -182,13 +177,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 
 	  template: '\n    <div class="vue-base64-file-upload">\n      <img\n        v-show="visiblePreview && !disablePreview"\n        ref="preview"\n        :class="imageClass" />\n      <div class="vue-base64-file-upload-wrapper" :style="wrapperStyles">\n        <input\n          ref="input"\n          type="file"\n          @change="onChange"\n          :style="fileInputStyles"\n          :accept=accept />\n        <input\n          type="text"\n          :class="inputClass"\n          :style="textInputStyles"\n          :value="fileName || file && file.name"\n          :placeholder="placeholder"\n          disabled />\n      </div>\n    </div>\n  '
-	});
-
-/***/ },
-/* 1 */
-/***/ function(module, exports) {
-
-	module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
+	};
 
 /***/ }
 /******/ ])

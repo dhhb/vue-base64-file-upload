@@ -5,18 +5,18 @@
 ## Install
 
 ```bash
-npm i vue-blob-file-upload --save
+npm i vue-base64-file-upload --save
 ```
 
 ## Example
 
 ```js
 import Vue from 'vue';
-import VueBlobFileUpload from 'vue-blob-file-upload';
+import VueBase64FileUpload from 'vue-base64-file-upload';
 
 const app = new Vue({
   components: {
-    VueBlobFileUpload
+    VueBase64FileUpload
   },
 
   data() {
@@ -42,7 +42,7 @@ const app = new Vue({
   template: `
     <div class="container">
       <h2>Upload file</h2>
-      <vue-blob-file-upload 
+      <vue-base64-file-upload 
         class="v1"
         accept="image/png,image/jpeg"
         image-class="v1-image"

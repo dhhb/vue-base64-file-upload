@@ -1,9 +1,9 @@
 import Vue from 'vue';
-import VueBlobFileUpload from '../';
+import VueBase64FileUpload from '../';
 
 const app = new Vue({
   components: {
-    VueBlobFileUpload
+    VueBase64FileUpload
   },
 
   data() {
@@ -29,9 +29,9 @@ const app = new Vue({
 
   template: `
     <div class="container">
-      <h2>Vue Blob File Upload</h2>
+      <h2>Vue Base64 File Upload</h2>
       <div>
-        <vue-blob-file-upload
+        <vue-base64-file-upload
           class="v1"
           accept="image/png,image/jpeg"
           image-class="v1-image"
@@ -42,7 +42,7 @@ const app = new Vue({
           @load="onLoad" />
       </div>
       <div>
-        <vue-blob-file-upload class="v2" />
+        <vue-base64-file-upload class="v2" />
       </div>
     </div>
   `

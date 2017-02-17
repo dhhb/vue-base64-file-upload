@@ -8,8 +8,8 @@ const webpackUMDExternal = require('webpack-umd-external');
 
 const pluginsList = [];
 const outputFileName = env === 'production' ?
-  'vue-blob-file-upload.min.js' :
-  'vue-blob-file-upload.js';
+  'vue-base64-file-upload.min.js' :
+  'vue-base64-file-upload.js';
 
 if (env === 'production') {
   pluginsList.push(
@@ -26,7 +26,7 @@ const config = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: outputFileName,
-    library: 'VueBlobFielUpload',
+    library: 'VueBase64FileUpload',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },

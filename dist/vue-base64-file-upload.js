@@ -2,11 +2,11 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("vue"));
 	else if(typeof define === 'function' && define.amd)
-		define("VueBlobFielUpload", ["vue"], factory);
+		define("VueBase64FileUpload", ["vue"], factory);
 	else if(typeof exports === 'object')
-		exports["VueBlobFielUpload"] = factory(require("vue"));
+		exports["VueBase64FileUpload"] = factory(require("vue"));
 	else
-		root["VueBlobFielUpload"] = factory(root["Vue"]);
+		root["VueBase64FileUpload"] = factory(root["Vue"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE_1__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -70,7 +70,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  console.error('Your browser does not support FileReader API!');
 	}
 
-	exports.default = _vue2.default.component('vue-blob-file-upload', {
+	exports.default = _vue2.default.component('vue-base64-file-upload', {
 	  props: {
 	    imageClass: {
 	      type: String,
@@ -181,7 +181,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 
-	  template: '\n    <div class="vue-blob-file-upload">\n      <img\n        v-show="visiblePreview && !disablePreview"\n        ref="preview"\n        :class="imageClass" />\n      <div class="vue-blob-file-upload-wrapper" :style="wrapperStyles">\n        <input\n          ref="input"\n          type="file"\n          @change="onChange"\n          :style="fileInputStyles"\n          :accept=accept />\n        <input\n          type="text"\n          :class="inputClass"\n          :style="textInputStyles"\n          :value="fileName || file && file.name"\n          :placeholder="placeholder"\n          disabled />\n      </div>\n    </div>\n  '
+	  template: '\n    <div class="vue-base64-file-upload">\n      <img\n        v-show="visiblePreview && !disablePreview"\n        ref="preview"\n        :class="imageClass" />\n      <div class="vue-base64-file-upload-wrapper" :style="wrapperStyles">\n        <input\n          ref="input"\n          type="file"\n          @change="onChange"\n          :style="fileInputStyles"\n          :accept=accept />\n        <input\n          type="text"\n          :class="inputClass"\n          :style="textInputStyles"\n          :value="fileName || file && file.name"\n          :placeholder="placeholder"\n          disabled />\n      </div>\n    </div>\n  '
 	});
 
 /***/ },

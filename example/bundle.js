@@ -13,7 +13,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var app = new _vue2.default({
   components: {
-    VueBlobFileUpload: _2.default
+    VueBase64FileUpload: _2.default
   },
 
   data: function data() {
@@ -36,7 +36,7 @@ var app = new _vue2.default({
     }
   },
 
-  template: '\n    <div class="container">\n      <h2>Vue Blob File Upload</h2>\n      <div>\n        <vue-blob-file-upload\n          class="v1"\n          accept="image/png,image/jpeg"\n          image-class="v1-image"\n          input-class="v1-image"\n          :max-size="customImageMaxSize"\n          @size-exceeded="onSizeExceeded"\n          @file="onFile"\n          @load="onLoad" />\n      </div>\n      <div>\n        <vue-blob-file-upload class="v2" />\n      </div>\n    </div>\n  '
+  template: '\n    <div class="container">\n      <h2>Vue Base64 File Upload</h2>\n      <div>\n        <vue-base64-file-upload\n          class="v1"\n          accept="image/png,image/jpeg"\n          image-class="v1-image"\n          input-class="v1-image"\n          :max-size="customImageMaxSize"\n          @size-exceeded="onSizeExceeded"\n          @file="onFile"\n          @load="onLoad" />\n      </div>\n      <div>\n        <vue-base64-file-upload class="v2" />\n      </div>\n    </div>\n  '
 });
 
 app.$mount('#app');
@@ -60,7 +60,7 @@ if (!window.FileReader) {
   console.error('Your browser does not support FileReader API!');
 }
 
-exports.default = _vue2.default.component('vue-blob-file-upload', {
+exports.default = _vue2.default.component('vue-base64-file-upload', {
   props: {
     imageClass: {
       type: String,
@@ -170,7 +170,7 @@ exports.default = _vue2.default.component('vue-blob-file-upload', {
     }
   },
 
-  template: '\n    <div class="vue-blob-file-upload">\n      <img\n        v-show="visiblePreview && !disablePreview"\n        ref="preview"\n        :class="imageClass" />\n      <div class="vue-blob-file-upload-wrapper" :style="wrapperStyles">\n        <input\n          ref="input"\n          type="file"\n          @change="onChange"\n          :style="fileInputStyles"\n          :accept=accept />\n        <input\n          type="text"\n          :class="inputClass"\n          :style="textInputStyles"\n          :value="fileName || file && file.name"\n          :placeholder="placeholder"\n          disabled />\n      </div>\n    </div>\n  '
+  template: '\n    <div class="vue-base64-file-upload">\n      <img\n        v-show="visiblePreview && !disablePreview"\n        ref="preview"\n        :class="imageClass" />\n      <div class="vue-base64-file-upload-wrapper" :style="wrapperStyles">\n        <input\n          ref="input"\n          type="file"\n          @change="onChange"\n          :style="fileInputStyles"\n          :accept=accept />\n        <input\n          type="text"\n          :class="inputClass"\n          :style="textInputStyles"\n          :value="fileName || file && file.name"\n          :placeholder="placeholder"\n          disabled />\n      </div>\n    </div>\n  '
 });
 
 },{"vue":4}],3:[function(require,module,exports){

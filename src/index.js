@@ -4,7 +4,7 @@ if (!window.FileReader) {
   console.error('Your browser does not support FileReader API!');
 }
 
-export default Vue.component('vue-blob-file-upload', {
+export default Vue.component('vue-base64-file-upload', {
   props: {
     imageClass: {
       type: String,
@@ -115,12 +115,12 @@ export default Vue.component('vue-blob-file-upload', {
   },
 
   template: `
-    <div class="vue-blob-file-upload">
+    <div class="vue-base64-file-upload">
       <img
         v-show="visiblePreview && !disablePreview"
         ref="preview"
         :class="imageClass" />
-      <div class="vue-blob-file-upload-wrapper" :style="wrapperStyles">
+      <div class="vue-base64-file-upload-wrapper" :style="wrapperStyles">
         <input
           ref="input"
           type="file"

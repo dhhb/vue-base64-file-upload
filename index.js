@@ -14,7 +14,7 @@ if (!window.FileReader) {
   console.error('Your browser does not support FileReader API!');
 }
 
-exports.default = _vue2.default.component('vue-blob-file-upload', {
+exports.default = _vue2.default.component('vue-base64-file-upload', {
   props: {
     imageClass: {
       type: String,
@@ -125,5 +125,5 @@ exports.default = _vue2.default.component('vue-blob-file-upload', {
     }
   },
 
-  template: '\n    <div class="vue-blob-file-upload">\n      <img\n        v-show="visiblePreview && !disablePreview"\n        ref="preview"\n        :class="imageClass" />\n      <div class="vue-blob-file-upload-wrapper" :style="wrapperStyles">\n        <input\n          ref="input"\n          type="file"\n          @change="onChange"\n          :style="fileInputStyles"\n          :accept=accept />\n        <input\n          type="text"\n          :class="inputClass"\n          :style="textInputStyles"\n          :value="fileName || file && file.name"\n          :placeholder="placeholder"\n          disabled />\n      </div>\n    </div>\n  '
+  template: '\n    <div class="vue-base64-file-upload">\n      <img\n        v-show="visiblePreview && !disablePreview"\n        ref="preview"\n        :class="imageClass" />\n      <div class="vue-base64-file-upload-wrapper" :style="wrapperStyles">\n        <input\n          ref="input"\n          type="file"\n          @change="onChange"\n          :style="fileInputStyles"\n          :accept=accept />\n        <input\n          type="text"\n          :class="inputClass"\n          :style="textInputStyles"\n          :value="fileName || file && file.name"\n          :placeholder="placeholder"\n          disabled />\n      </div>\n    </div>\n  '
 });

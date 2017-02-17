@@ -66,9 +66,9 @@ app.$mount('#app');
 
 - `image-class` - pass additional classes for preview `img` tag
 - `input-class` - pass additional classes for text `input` tag
-- `accept` - mimetypes allowed for upload, _default `'image/png,image/gif,image/jpeg'`_
-- `max-size` - number of megabytes allowed for upload, _default `10`_
-- `disable-preview` - not show preview image, _default `false`_
+- `accept` - mimetypes allowed for upload, _defaults to `'image/png,image/gif,image/jpeg'`_
+- `max-size` - number of megabytes allowed for upload, _defaults to `10`_
+- `disable-preview` - not show preview image, _defaults to `false`_
 - `file-name` - pass custom filename to be displayed in text `input` tag
 - `placeholder` - pass placeholder text for text `input` tag
 

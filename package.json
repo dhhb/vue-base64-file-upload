@@ -1,7 +1,7 @@
 {
-  "name": "vue-blob-file-upload",
+  "name": "vue-base64-file-upload",
   "version": "1.0.0",
-  "description": "Upload files as blobs (base64 data-uris)",
+  "description": "Upload files as base64 data-uris",
   "main": "./index.js",
   "directories": {
     "example": "example"
@@ -17,14 +17,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dhhb/vue-blob-file-upload.git"
+    "url": "git+https://github.com/dhhb/vue-base64-file-upload.git"
   },
   "keywords": [
-    "vue.js",
+    "vue",
     "component",
     "upload",
     "input",
-    "file"
+    "file",
+    "base64",
+    "data-uri",
+    "blob"
   ],
   "browser": {
     "vue": "vue/dist/vue.common"
@@ -32,9 +35,9 @@
   "author": "Dmitri Voronianski <dmitri.voronianski@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dhhb/vue-blob-file-upload/issues"
+    "url": "https://github.com/dhhb/vue-base64-file-upload/issues"
   },
-  "homepage": "https://github.com/dhhb/vue-blob-file-upload#readme",
+  "homepage": "https://github.com/dhhb/vue-base64-file-upload#readme",
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-core": "^6.23.1",

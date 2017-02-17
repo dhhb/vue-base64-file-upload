@@ -104,11 +104,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				data: function data() {
 					return {
 						file: null,
-						preview: this.defaultPreview,
+						preview: null,
 						visiblePreview: false
 					};
 				},
-				mounted: function mounted() {},
 
 				computed: {
 					wrapperStyles: function wrapperStyles() {
@@ -136,6 +135,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 							'width': '100%',
 							'cursor': 'pointer'
 						};
+					},
+					previewImage: function previewImage() {
+						return this.preview || this.defaultPreview;
 					}
 				},
 
@@ -179,7 +181,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					}
 				},
 
-				template: '\n    <div class="vue-base64-file-upload">\n      <img\n        v-show="preview && !disablePreview"\n        :src="preview"\n        :class="imageClass" />\n      <div class="vue-base64-file-upload-wrapper" :style="wrapperStyles">\n        <input\n          type="file"\n          @change="onChange"\n          :style="fileInputStyles"\n          :accept=accept />\n        <input\n          type="text"\n          :class="inputClass"\n          :style="textInputStyles"\n          :value="fileName || file && file.name"\n          :placeholder="placeholder"\n          disabled />\n      </div>\n    </div>\n  '
+				template: '\n    <div class="vue-base64-file-upload">\n      <img\n        v-show="previewImage && !disablePreview"\n        :src="previewImage"\n        :class="imageClass" />\n      <div class="vue-base64-file-upload-wrapper" :style="wrapperStyles">\n        <input\n          type="file"\n          @change="onChange"\n          :style="fileInputStyles"\n          :accept=accept />\n        <input\n          type="text"\n          :class="inputClass"\n          :style="textInputStyles"\n          :value="fileName || file && file.name"\n          :placeholder="placeholder"\n          disabled />\n      </div>\n    </div>\n  '
 			};
 
 			/***/

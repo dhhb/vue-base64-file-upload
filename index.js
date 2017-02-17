@@ -48,11 +48,10 @@ exports.default = {
   data: function data() {
     return {
       file: null,
-      preview: this.defaultPreview,
+      preview: null,
       visiblePreview: false
     };
   },
-  mounted: function mounted() {},
 
 
   computed: {
@@ -81,6 +80,9 @@ exports.default = {
         'width': '100%',
         'cursor': 'pointer'
       };
+    },
+    previewImage: function previewImage() {
+      return this.preview || this.defaultPreview;
     }
   },
 
@@ -124,5 +126,5 @@ exports.default = {
     }
   },
 
-  template: '\n    <div class="vue-base64-file-upload">\n      <img\n        v-show="preview && !disablePreview"\n        :src="preview"\n        :class="imageClass" />\n      <div class="vue-base64-file-upload-wrapper" :style="wrapperStyles">\n        <input\n          type="file"\n          @change="onChange"\n          :style="fileInputStyles"\n          :accept=accept />\n        <input\n          type="text"\n          :class="inputClass"\n          :style="textInputStyles"\n          :value="fileName || file && file.name"\n          :placeholder="placeholder"\n          disabled />\n      </div>\n    </div>\n  '
+  template: '\n    <div class="vue-base64-file-upload">\n      <img\n        v-show="previewImage && !disablePreview"\n        :src="previewImage"\n        :class="imageClass" />\n      <div class="vue-base64-file-upload-wrapper" :style="wrapperStyles">\n        <input\n          type="file"\n          @change="onChange"\n          :style="fileInputStyles"\n          :accept=accept />\n        <input\n          type="text"\n          :class="inputClass"\n          :style="textInputStyles"\n          :value="fileName || file && file.name"\n          :placeholder="placeholder"\n          disabled />\n      </div>\n    </div>\n  '
 };

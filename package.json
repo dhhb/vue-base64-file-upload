@@ -1,6 +1,6 @@
 {
   "name": "vue-base64-file-upload",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Upload files as base64 data-uris",
   "main": "./index.js",
   "directories": {

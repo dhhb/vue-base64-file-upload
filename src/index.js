@@ -43,13 +43,9 @@ export default {
   data() {
     return {
       file: null,
-      preview: this.defaultPreview,
+      preview: null,
       visiblePreview: false
     };
-  },
-
-  mounted() {
-
   },
 
   computed: {
@@ -80,6 +76,10 @@ export default {
         'width': '100%',
         'cursor': 'pointer'
       };
+    },
+
+    previewImage() {
+      return this.preview || this.defaultPreview;
     }
   },
 
@@ -124,8 +124,8 @@ export default {
   template: `
     <div class="vue-base64-file-upload">
       <img
-        v-show="preview && !disablePreview"
-        :src="preview"
+        v-show="previewImage && !disablePreview"
+        :src="previewImage"
         :class="imageClass" />
       <div class="vue-base64-file-upload-wrapper" :style="wrapperStyles">
         <input

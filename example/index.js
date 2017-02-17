@@ -42,7 +42,11 @@ const app = new Vue({
           @load="onLoad" />
       </div>
       <div>
-        <vue-base64-file-upload class="v2" />
+        <vue-base64-file-upload
+          class="v2"
+          @size-exceeded="onSizeExceeded"
+          @file="onFile"
+          @load="onLoad" />
       </div>
     </div>
   `

@@ -36,7 +36,7 @@ var app = new _vue2.default({
     }
   },
 
-  template: '\n    <div class="container">\n      <h2>Vue Base64 File Upload</h2>\n      <div>\n        <vue-base64-file-upload\n          class="v1"\n          accept="image/png,image/jpeg"\n          image-class="v1-image"\n          input-class="v1-image"\n          :max-size="customImageMaxSize"\n          @size-exceeded="onSizeExceeded"\n          @file="onFile"\n          @load="onLoad" />\n      </div>\n      <div>\n        <vue-base64-file-upload class="v2" />\n      </div>\n    </div>\n  '
+  template: '\n    <div class="container">\n      <h2>Vue Base64 File Upload</h2>\n      <div>\n        <vue-base64-file-upload\n          class="v1"\n          accept="image/png,image/jpeg"\n          image-class="v1-image"\n          input-class="v1-image"\n          :max-size="customImageMaxSize"\n          @size-exceeded="onSizeExceeded"\n          @file="onFile"\n          @load="onLoad" />\n      </div>\n      <div>\n        <vue-base64-file-upload\n          class="v2"\n          @size-exceeded="onSizeExceeded"\n          @file="onFile"\n          @load="onLoad" />\n      </div>\n    </div>\n  '
 });
 
 app.$mount('#app');
